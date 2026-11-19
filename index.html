@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101114">
+<meta name="description" content="A clean workspace for opening permitted websites and searching the web.">
+<title>OpenAccess — Web workspace</title>
+<style>
+:root{color-scheme:dark;--bg:#101114;--panel:#17191e;--panel2:#1e2128;--line:#2a2e37;--text:#f3f4f6;--muted:#9299a6;--accent:#dce7ff;--accentText:#182235;--shadow:0 24px 80px #0005}
+:root.light{color-scheme:light;--bg:#f4f5f7;--panel:#fff;--panel2:#f0f2f5;--line:#e1e4e9;--text:#17191e;--muted:#69717e;--accent:#202c43;--accentText:#fff;--shadow:0 24px 80px #17203312}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+button,input{font:inherit}button{cursor:pointer}.shell{max-width:1120px;margin:auto;padding:28px 28px 64px}.top{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;gap:11px;align-items:center;font-weight:650;letter-spacing:-.03em}.mark{width:30px;height:30px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center;background:var(--panel2);font-size:15px}.top-actions{display:flex;gap:9px}.iconbtn{width:38px;height:38px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--text);font-size:16px}.hero{max-width:720px;margin:clamp(70px,13vh,138px) auto 0;text-align:center}.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:650}.hero h1{font-size:clamp(38px,6vw,62px);line-height:1.04;letter-spacing:-.065em;margin:17px 0 14px;font-weight:650}.sub{color:var(--muted);margin:0 auto 30px;max-width:490px;font-size:15px}.search{display:flex;align-items:center;gap:12px;padding:8px 9px 8px 18px;background:var(--panel);border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow);transition:border .2s}.search:focus-within{border-color:#8796b4}.search .glass{color:var(--muted);font-size:18px}.search input{min-width:0;flex:1;border:0;outline:0;background:transparent;color:var(--text);font-size:15px;padding:10px 0}.go{border:0;border-radius:11px;padding:10px 17px;background:var(--accent);color:var(--accentText);font-weight:650}.hint{font-size:11px;color:var(--muted);margin-top:12px}.section{margin-top:66px}.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.section-head h2{font-size:13px;letter-spacing:.01em;margin:0;font-weight:650}.section-head span{font-size:12px;color:var(--muted)}.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.tile{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:17px;text-decoration:none;color:var(--text);display:flex;gap:12px;align-items:center;min-height:76px;transition:transform .15s,border .15s}.tile:hover{transform:translateY(-2px);border-color:#737d91}.tile-icon{width:36px;height:36px;border-radius:11px;background:var(--panel2);display:grid;place-items:center;font-size:15px;font-weight:700}.tile strong{display:block;font-size:13px}.tile small{display:block;color:var(--muted);font-size:11px;margin-top:2px}.lower{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}.box{border:1px solid var(--line);border-radius:15px;background:var(--panel);padding:18px;min-height:130px}.box h3{font-size:13px;margin:0 0 13px}.empty{font-size:12px;color:var(--muted)}.entry{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid var(--line);font-size:12px}.entry a{color:var(--text);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.entry button{border:0;background:none;color:var(--muted)}.footer{display:flex;justify-content:space-between;gap:18px;margin-top:48px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:11px}.footer a{color:inherit}.notice{margin:24px auto 0;max-width:610px;padding:11px 14px;border:1px solid var(--line);border-radius:12px;color:var(--muted);font-size:11px;text-align:left}.notice b{color:var(--text);font-weight:600}@media(max-width:720px){.shell{padding:20px 17px 40px}.hero{margin-top:84px}.tiles{grid-template-columns:repeat(2,1fr)}.lower{grid-template-columns:1fr}.section{margin-top:48px}.footer{flex-direction:column}.top{align-items:center}}@media(max-width:380px){.tiles{grid-template-columns:1fr}.search{gap:8px;padding-left:12px}.go{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top"><div class="brand"><span class="mark">↗</span><span>OpenAccess</span></div><div class="top-actions"><button class="iconbtn" id="theme" aria-label="Toggle appearance" title="Toggle appearance">◐</button></div></header>
+<main>
+<section class="hero">
+<div class="eyebrow">A calmer place to start</div>
+<h1>The web, at your pace.</h1>
+<p class="sub">Search the web or open a destination. Your bookmarks and recent links stay in this browser.</p>
+<form class="search" id="search"><span class="glass">⌕</span><input id="address" autocomplete="off" spellcheck="false" placeholder="Search or enter a website address" aria-label="Search or enter a website address"><button class="go" type="submit">Go ↗</button></form>
+<div class="hint">Enter a website address or type something to search</div>
+<div class="notice"><b>Heads up:</b> OpenAccess opens sites directly in your browser. It does not proxy traffic or bypass network, device, or website restrictions.</div>
+</section>
+<section class="section"><div class="section-head"><h2>Quick access</h2><span>Choose a destination</span></div><div class="tiles">
+<a class="tile" href="https://www.google.com/" data-name="Google"><span class="tile-icon">G</span><span><strong>Google</strong><small>Search</small></span></a>
+<a class="tile" href="https://www.wikipedia.org/" data-name="Wikipedia"><span class="tile-icon">W</span><span><strong>Wikipedia</strong><small>Knowledge</small></span></a>
+<a class="tile" href="https://github.com/" data-name="GitHub"><span class="tile-icon">⌘</span><span><strong>GitHub</strong><small>Development</small></span></a>
+<a class="tile" href="https://developer.mozilla.org/" data-name="MDN"><span class="tile-icon">M</span><span><strong>MDN</strong><small>Web docs</small></span></a>
+</div></section>
+<section class="lower"><div class="box"><h3>Bookmarks <button id="addBookmark" style="float:right;border:0;background:none;color:var(--muted)">+ Add current</button></h3><div id="bookmarks" class="empty">No bookmarks yet. Add one from the address bar.</div></div><div class="box"><h3>Recently opened <button id="clearHistory" style="float:right;border:0;background:none;color:var(--muted)">Clear</button></h3><div id="history" class="empty">Your recent destinations will appear here.</div></div></section>
+</main>
+<footer class="footer"><span>OpenAccess · A simple web workspace</span><span>Local-first · No account required · <a href="https://github.com/MeYashverma/Open-Access">Source on GitHub</a></span></footer>
+</div>
+<script>
+const $=s=>document.querySelector(s), read=(k)=>{try{return JSON.parse(localStorage.getItem(k)||'[]')}catch{return[]}}, write=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+function destination(raw){let value=raw.trim();if(!value)return null;if(/^https?:\/\//i.test(value))return value;if(/^(localhost|[\w-]+\.)+[a-z]{2,}([/:?#].*)?$/i.test(value))return 'https://'+value;return 'https://www.google.com/search?q='+encodeURIComponent(value)}
+function openDestination(url){const items=read('oa-history').filter(x=>x.url!==url);items.unshift({url,time:Date.now()});write('oa-history',items.slice(0,8));window.open(url,'_blank','noopener,noreferrer');render()}
+$('#search').addEventListener('submit',e=>{e.preventDefault();const url=destination($('#address').value);if(url)openDestination(url)});
+document.querySelectorAll('.tile').forEach(a=>a.addEventListener('click',()=>{const url=a.href;const items=read('oa-history').filter(x=>x.url!==url);items.unshift({url,time:Date.now()});write('oa-history',items.slice(0,8))}));
+function row(item,kind){const d=document.createElement('div');d.className='entry';const a=document.createElement('a');a.href=item.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=item.url.replace(/^https?:\/\//,'');a.title=item.url;a.addEventListener('click',()=>{if(kind==='bookmark')return;const items=read('oa-history').filter(x=>x.url!==item.url);items.unshift({url:item.url,time:Date.now()});write('oa-history',items.slice(0,8))});d.append(a);if(kind==='bookmark'){const b=document.createElement('button');b.textContent='×';b.setAttribute('aria-label','Remove bookmark');b.onclick=()=>{write('oa-bookmarks',read('oa-bookmarks').filter(x=>x.url!==item.url));render()};d.append(b)}return d}
+function render(){for(const [id,key,kind] of [['bookmarks','oa-bookmarks','bookmark'],['history','oa-history','history']]){const el=$('#'+id),items=read(key);el.replaceChildren();if(!items.length){el.className='empty';el.textContent=kind==='bookmark'?'No bookmarks yet. Add one from the address bar.':'Your recent destinations will appear here.'}else{el.className='';items.slice(0,6).forEach(x=>el.append(row(x,kind)))}}}
+$('#addBookmark').onclick=()=>{const url=destination($('#address').value);if(!url){$('#address').focus();return}const items=read('oa-bookmarks').filter(x=>x.url!==url);items.unshift({url});write('oa-bookmarks',items.slice(0,20));render()};
+$('#clearHistory').onclick=()=>{write('oa-history',[]);render()};
+$('#theme').onclick=()=>{const light=document.documentElement.classList.toggle('light');localStorage.setItem('oa-theme',light?'light':'dark')};
+if(localStorage.getItem('oa-theme')==='light')document.documentElement.classList.add('light');render();
+</script>
+</body></html>
