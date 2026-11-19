@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: open-access-proxy
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: ALLOWED_HOSTS
+        value: example.com,www.wikipedia.org,en.wikipedia.org,wikipedia.org,developer.mozilla.org,github.com,www.google.com
+      - key: FRONTEND_ORIGIN
+        value: "*"
